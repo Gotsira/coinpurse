@@ -18,7 +18,7 @@ public class Coin implements Comparable<Coin> {
      * A coin with given value using the default currency.
      * 
      * @param value 
-     * is the value of the coin.
+     * 		is the value of the coin.
      */
 	public Coin(double value) {
 		this.value = value;
@@ -29,9 +29,9 @@ public class Coin implements Comparable<Coin> {
      * A coin with given value and currency.
      * 
      * @param value
-     * is the value of the coin.
+     * 		is the value of the coin.
      * @param currency
-     * is the curency of the coin.
+     * 		is the curency of the coin.
      */
 	public Coin(double value, String currency) {
 		this.value = value;
@@ -62,7 +62,7 @@ public class Coin implements Comparable<Coin> {
 	 * currency.
 	 * 
 	 * @param arg 
-	 * is the coin to compare.
+	 * 		is the coin to compare.
 	 * @return true if the two coins are equals, false otherwise.
 	 */
 	public boolean equals(Object arg) {
@@ -85,10 +85,10 @@ public class Coin implements Comparable<Coin> {
 	 * and 1 if this coin is greater.
 	 * 
 	 * @param c
-	 * is the Coin object to compare with.
+	 * 		is the Coin object to compare with.
 	 * @return -1 if this coin has lesser value.
-	 * 1 is this coin is greater.
-	 * 0 if they are equal.
+	 * 			1 is this coin is greater.
+	 * 			0 if they are equal.
 	 */
 	public int compareTo(Coin c) {
 		if(c == null) {

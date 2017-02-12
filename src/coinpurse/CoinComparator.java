@@ -18,14 +18,14 @@ public class CoinComparator implements Comparator<Coin>{
 	 * they are the same.
 	 * 
 	 * @param o1
-	 * is the first object to compare.
-	 * o2 
-	 * is the second object to compare.
+	 * 		is the first object to compare.
+	 * @param o2 
+	 * 		is the second object to compare.
 	 * 
 	 * @return -1 if the currency of o1 comes first.
-	 * 0 if they are the same.
-	 * 1 if the currency of o2 comes first.
-	 * 
+	 * 			0 if they are the same.
+	 * 			1 if the currency of o2 comes first.
+	 * 	
 	 */
 	@Override
 	public int compare(Coin o1, Coin o2) {
