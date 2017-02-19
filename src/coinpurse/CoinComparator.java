@@ -10,7 +10,7 @@ import java.util.Comparator;
  *
  */
 
-public class CoinComparator implements Comparator<Coin>{
+public class CoinComparator implements Comparator<Valuable>{
 	
 	/**
 	 * Compares the currency between two coin. Return -1 currency of
@@ -28,7 +28,7 @@ public class CoinComparator implements Comparator<Coin>{
 	 * 	
 	 */
 	@Override
-	public int compare(Coin o1, Coin o2) {
+	public int compare(Valuable o1, Valuable o2) {
 		return o1.getCurrency().compareToIgnoreCase(o2.getCurrency());
 	}
 }
