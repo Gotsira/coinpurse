@@ -21,6 +21,7 @@ public class Purse {
      *  Capacity is set when the purse is created and cannot be changed.
      */
     private final int capacity;
+    private double balance;
     
     /** 
      *  Create a purse with a specified capacity.
@@ -50,7 +51,8 @@ public class Purse {
     	}
     	return keep;
     }
-
+    
+ 
     
     /**
      * Return the capacity of the coin purse.
@@ -125,22 +127,23 @@ public class Purse {
      */
     public String toString() {
         //TODO complete this
-    	int coin = 0;
-    	int banknotes = 0;
-    	double coinBalance = 0;
-    	double bankBalance = 0;
-    	for(int i = 0; i < money.size(); i++) {
-    		if(money.get(i).getValue() < 20) {
-    			coinBalance += money.get(i).getValue();
-    			coin++;
-    		}
-    		else {
-    			bankBalance += money.get(i).getValue();
-    			banknotes++;
-    		}
-    	}
-    	return coin + " coins with value " + coinBalance + "\n" 
-    		   + banknotes + " banknotes with value " + bankBalance;
+//    	int coin = 0;
+//    	int banknotes = 0;
+//    	double coinBalance = 0;
+//    	double bankBalance = 0;
+//    	for(int i = 0; i < money.size(); i++) {
+//    		if(money.get(i).getValue() < 20) {
+//    			coinBalance += money.get(i).getValue();
+//    			coin++;
+//    		}
+//    		else {
+//    			bankBalance += money.get(i).getValue();
+//    			banknotes++;
+//    		}
+//    	}
+//    	return coin + " coins with value " + coinBalance + "\n" 
+//    		   + banknotes + " banknotes with value " + bankBalance;
+    		return count() + " items with value " + this.getBalance();
     }
 }
 

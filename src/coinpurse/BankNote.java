@@ -6,12 +6,8 @@ package coinpurse;
  * @author Sirasath Piyapootinun
  *
  */
-public class BankNote implements Valuable{
-	private static final String DEFAULT_CURRENCY = "Baht";
-	/** The currecy of the bank note. */
-	private String currency;
-	/** Value of the bank note. */
-	private double value;
+public class BankNote extends AbstractValuable {
+	
 	/** The serial number of the bank note. */
 	private long serialNumber;
 	/** The next serial number of the bank note. */
@@ -25,7 +21,7 @@ public class BankNote implements Valuable{
 	 * @param value is the value of the bank note.
 	 */
 	public BankNote(double value) {
-		this(value, DEFAULT_CURRENCY);
+		super(value);
 	}
 	
 	/**
@@ -36,28 +32,9 @@ public class BankNote implements Valuable{
 	 * @param currency is the currency of the bank note.
 	 */
 	public BankNote(double value, String currency) {
-		this.value = value;
-		this.currency = currency;
+		super(value, currency);
 		this.serialNumber = this.nextSerialNumber;
 		this.nextSerialNumber++;
-	}
-	
-	/**
-	 * Gets the currency of the bank note.
-	 * 
-	 * @return the currency of the bank note.
-	 */
-	public String getCurrency() {
-		return this.currency;
-	}
-	
-	/**
-	 * Gets the value of the bank note.
-	 * 
-	 * @return the value of the bank note.
-	 */
-	public double getValue() {
-		return this.value;
 	}
 	
 	/**
@@ -70,25 +47,11 @@ public class BankNote implements Valuable{
 	}
 	
 	/**
-	 * Compares this note with another object. Return 
-	 * true if they are equal, false if not.
-	 * 
-	 * @param obj is the object to e compare with this note.
-	 *            
-	 * @return true if the notes are equal, false if vice versa.
+	 * Sets the serial number of the bank note.
+	 * @param serialNumber is the serial number of the bank note.
 	 */
-	public boolean equals(Object obj) {
-		if(obj == null) {
-			return false;
-		}
-		if(obj.getClass() != this.getClass()) {
-			return false;
-		}
-		BankNote other = (BankNote) obj;
-		if(other.currency.equals(this.currency) && other.value == this.value) {
-			return true;
-		}
-		return false;
+	public void setSerialNumber(long serialNumber) {
+		this.serialNumber = serialNumber;
 	}
 	
 	/** 
@@ -97,6 +60,6 @@ public class BankNote implements Valuable{
      * @return a string describing the bank note.
      */
 	public String toString() {
-		return this.value + "-" + this.currency + " note [" + this.serialNumber + "]";
+		return String.format("%.0f %s note [%d]", this.value, this.currency, this.serialNumber);
 	}
 }

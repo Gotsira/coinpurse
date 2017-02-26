@@ -16,5 +16,12 @@ public class Main {
 		Purse purse = new Purse(capacity);
 		ConsoleDialog consoledialog = new ConsoleDialog(purse);
 		consoledialog.run();
+		
+//		MoneyFactory factory = MoneyFactory.getInstance();
+//		Valuable m = factory.createMoney(5);
+//		System.out.println(m.toString());
+//		Valuable m2 = factory.createMoney("1000.0");
+//		System.out.println(m2.toString());
+		
 	}
 }
