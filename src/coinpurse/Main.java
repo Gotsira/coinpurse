@@ -1,5 +1,7 @@
 package coinpurse;
 
+import java.util.ResourceBundle;
+
 /**
  * A main class to create objects and connect objects together.
  * The user interface needs a reference to coin purse.
@@ -13,6 +15,7 @@ public class Main {
      * @param args not used
      */
 	public static void main(String[] args) {
+		
 		Purse purse = new Purse(capacity);
 		ConsoleDialog consoledialog = new ConsoleDialog(purse);
 		consoledialog.run();

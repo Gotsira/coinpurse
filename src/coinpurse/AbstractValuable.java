@@ -47,7 +47,14 @@ public abstract class AbstractValuable implements Valuable {
 		}
 		return false;
 	}
-	
+	/**
+	 * Compares this Valuable with another by its value and currency.
+	 * 
+	 * @param val is the to Valuable to compare.
+	 * @return 1 if this object is lesser.
+	 * 		   0 if they are equal.
+	 * 		   -1 if this object is larger.
+	 */
 	public int compareTo(Valuable val) {
 		if(val == null) {
 			return -1;
