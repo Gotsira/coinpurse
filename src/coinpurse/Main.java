@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
  * @author Sirasath Piyapootinun
  */
 public class Main {
-	private static int capacity = 20;
+	private static int capacity = 3;
 	/**
      * Configure and start the application.
      * @param args not used
@@ -17,7 +17,13 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Purse purse = new Purse(capacity);
+		PurseStatusObserver observer = new PurseStatusObserver();
+		PurseBalance balance = new PurseBalance();
+		purse.addObserver(observer);
+		purse.addObserver(balance);
 		ConsoleDialog consoledialog = new ConsoleDialog(purse);
+		observer.run();
+		balance.run();
 		consoledialog.run();
 		
 //		MoneyFactory factory = MoneyFactory.getInstance();
@@ -25,6 +31,9 @@ public class Main {
 //		System.out.println(m.toString());
 //		Valuable m2 = factory.createMoney("1000.0");
 //		System.out.println(m2.toString());
+//		
+//		Purse purse = new Purse(-1);
+//		purse.insert(new Coin(-1, "Baht"));
 		
 	}
 }

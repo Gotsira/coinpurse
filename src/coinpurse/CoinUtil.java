@@ -41,7 +41,13 @@ public class CoinUtil {
 	 *
 	 */
 	public static void sortByCurrency(List<? extends Valuable> money) {
-		Collections.sort(money, new CoinComparator());
+		Collections.sort(money, new Comparator<Valuable>() {
+			
+			@Override
+			public int compare(Valuable o1, Valuable o2) {
+				return o1.getCurrency().compareToIgnoreCase(o2.getCurrency());
+			}
+		});
 	}
 	
 	/**

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Observable;
 
 /**
  *  A purse contains coins and bank notes. You can insert coins or
@@ -13,7 +14,7 @@ import java.util.List;
  *  
  *  @author Sirasath Piyapootinun
  */
-public class Purse {
+public class Purse extends Observable{
     /** Collection of objects in the purse. */
 	List<Valuable> money = new ArrayList<Valuable>();
     	
@@ -88,6 +89,8 @@ public class Purse {
         }
         money.add(val);
         money.sort(new CoinsComparator());
+        setChanged();
+        notifyObservers("Deposit: " + val.getValue());
         return true;
     }
     
@@ -117,6 +120,8 @@ public class Purse {
 		}
 		Valuable [] array = new Valuable[save.size()];
 		save.toArray(array);
+		setChanged();
+		notifyObservers("Withdraw: " + amount);
 		return array;
 	}
   
