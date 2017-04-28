@@ -41,7 +41,7 @@ public abstract class AbstractValuable implements Valuable {
 		if(arg.getClass() != this.getClass()) {
 			return false;
 		}
-		Coin other = (Coin) arg;
+		Valuable other = (Valuable) arg;
 		if(other.getCurrency().equals(this.getCurrency()) && other.getValue() == this.getValue()) {
 			return true;
 		}

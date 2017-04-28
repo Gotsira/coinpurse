@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
  * @author Sirasath Piyapootinun
  */
 public class Main {
-	private static int capacity = 3;
+	private static int capacity = 10;
 	/**
      * Configure and start the application.
      * @param args not used
